@@ -1,7 +1,7 @@
 dockerce.install
 =========
 
-Install docker service
+Install docker service on CentOS 7
 
 Requirements
 ------------
@@ -11,16 +11,17 @@ No requirement
 Role Variables
 --------------
 
+    dockerce_repository:
+      baserurl: https://download.docker.com/linux/centos/7/$basearch/stable
+      gpgkey:  https://download.docker.com/linux/centos/gpg
 
 Dependencies
 ------------
 
-
+No dependency
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
