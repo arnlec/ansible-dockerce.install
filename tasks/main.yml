@@ -20,8 +20,9 @@
 
 - name: install docker ce
   yum:
-    name: docker-ce
+    name: "docker-ce{{ '-' if ( dockerceVersion is  defined ) else ''}}{{dockerceVersion|default('')}}"
     state: present
+
 
 - name: start docker service
   service:

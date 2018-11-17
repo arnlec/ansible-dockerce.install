@@ -26,6 +26,7 @@ Example Playbook
     - hosts: servers
       roles:
          - dockerce.install
+           dockerceVersion: 18.09
 
 License
 -------
