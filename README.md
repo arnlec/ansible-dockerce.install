@@ -11,9 +11,11 @@ No requirement
 Role Variables
 --------------
 
-    dockerce_repository:
-      baserurl: https://download.docker.com/linux/centos/7/$basearch/stable
-      gpgkey:  https://download.docker.com/linux/centos/gpg
+    - dockerce_repository:
+        baserurl: https://download.docker.com/linux/centos/7/$basearch/stable
+        gpgkey:  https://download.docker.com/linux/centos/gpg
+    - dockerceVersion
+    - dockerce_http_proxy
 
 Dependencies
 ------------
