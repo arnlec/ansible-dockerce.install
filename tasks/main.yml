@@ -23,6 +23,17 @@
     name: "docker-ce{{ '-' if ( dockerceVersion is  defined ) else ''}}{{dockerceVersion|default('')}}"
     state: present
 
+- block:
+    - file:
+        path: /etc/systemd/system/docker.service.d
+        state: directory
+    - name: configure docker http proxy
+      template:
+        src: http-proxy.conf.j2
+        dest: /etc/systemd/system/docker.service.d/http-proxy.conf
+      notify: restart docker
+  when: dockerce_http_proxy is defined
+
 
 - name: start docker service
   service:
